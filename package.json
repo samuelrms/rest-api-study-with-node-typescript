@@ -1,0 +1,16 @@
+{
+  "name": "api-rest-node-ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Samuel_Ramos",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.4"
+  }
+}
