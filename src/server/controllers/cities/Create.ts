@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { Request, RequestHandler, Response } from "express";
 import { StatusCodes } from "http-status-codes";
 import * as yup from "yup";
 
@@ -12,13 +12,10 @@ const bodyValidation: yup.SchemaOf<Cities> = yup.object().shape({
   country: yup.string().required().max(2).min(2),
 });
 
-export const create = async (req: Request<{}, {}, Cities>, res: Response) => {
-  const data = req.body;
-
-  let validateDate: Cities | undefined = undefined;
-
+export const createBodyValidator: RequestHandler = async (req, res, next) => {
   try {
-    validateDate = await bodyValidation.validate(data, { abortEarly: false });
+    await bodyValidation.validate(req.body, { abortEarly: false });
+    return next();
   } catch (err) {
     const yupError = err as yup.ValidationError;
     const errors: Record<string, string> = {};
@@ -33,8 +30,10 @@ export const create = async (req: Request<{}, {}, Cities>, res: Response) => {
       errors,
     });
   }
+};
 
-  console.log(validateDate);
+export const create = async (req: Request<{}, {}, Cities>, res: Response) => {
+  console.log(req.body);
 
-  return res.send("Create!");
+  return res.send(req.body);
 };
