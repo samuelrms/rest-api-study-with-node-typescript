@@ -13,7 +13,7 @@ interface Filter {
   limit?: number;
 }
 
-export const createQueryValidation = validation((getSchema) => ({
+export const createValidation = validation((getSchema) => ({
   body: getSchema<Cities>(
     yup.object().shape({
       name: yup.string().required().min(3),
