@@ -1,5 +1,4 @@
 import { Router } from "express";
-import { StatusCodes } from "http-status-codes";
 
 import { CitiesController } from "../controllers";
 
@@ -13,6 +12,12 @@ router.post(
   "/cities",
   CitiesController.createValidation,
   CitiesController.create
+);
+
+router.get(
+  "/cities",
+  CitiesController.getAllValidation,
+  CitiesController.getAll
 );
 
 export { router };
