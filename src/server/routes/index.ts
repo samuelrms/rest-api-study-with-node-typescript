@@ -8,16 +8,34 @@ router.get("/", (_, res) => {
   return res.send("hello word!");
 });
 
+router.get(
+  "/cities",
+  CitiesController.getAllValidation,
+  CitiesController.getAll
+);
+
+router.get(
+  "/cities/:id",
+  CitiesController.getByIDValidation,
+  CitiesController.getByID
+);
+
+router.put(
+  "/cities/:id",
+  CitiesController.updateByIDValidation,
+  CitiesController.updateByID
+);
+
 router.post(
   "/cities",
   CitiesController.createValidation,
   CitiesController.create
 );
 
-router.get(
-  "/cities",
-  CitiesController.getAllValidation,
-  CitiesController.getAll
+router.delete(
+  "/cities/:id",
+  CitiesController.deleteByIDValidation,
+  CitiesController.deleteByID
 );
 
 export { router };
