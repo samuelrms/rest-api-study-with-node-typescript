@@ -5,7 +5,7 @@ import { CitiesController } from "../controllers";
 const router = Router();
 
 router.get("/", (_, res) => {
-  return res.send("hello word!");
+  return res.send("hello dev!");
 });
 
 router.get(
