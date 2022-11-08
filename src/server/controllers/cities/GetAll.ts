@@ -24,9 +24,15 @@ export const getAll = async (
   req: Request<{}, {}, {}, QueryProps>,
   res: Response
 ) => {
+  res.setHeader("access-control-expose-headers", "x-total-count");
+  res.setHeader("total-count", 1);
   console.log(req.query);
 
-  return res
-    .status(StatusCodes.INTERNAL_SERVER_ERROR)
-    .send("Implementação inválida");
+  return res.status(StatusCodes.OK).json([
+    {
+      id: 1,
+      name: "Uberlândia",
+      country: "MG",
+    },
+  ]);
 };
