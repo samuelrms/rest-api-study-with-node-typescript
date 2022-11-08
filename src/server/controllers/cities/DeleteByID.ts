@@ -21,7 +21,7 @@ export const deleteByID = async (req: Request<ParamProps>, res: Response) => {
 
   if (Number(req.params.id) === 123456) {
     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-      errorsResult: {
+      errors: {
         default: "Registro não encontrado",
       },
     });
