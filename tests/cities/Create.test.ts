@@ -11,6 +11,7 @@ describe("Cities - Create", () => {
     expect(res.statusCode).toEqual(StatusCodes.CREATED);
     expect(typeof res.body).toEqual("number");
   });
+
   it("Create small name", async () => {
     const res = await testServer.post("/cities").send({
       name: "Ub",
@@ -19,6 +20,7 @@ describe("Cities - Create", () => {
     expect(res.statusCode).toEqual(StatusCodes.BAD_REQUEST);
     expect(res.body).toHaveProperty("errorsResult.body.name");
   });
+
   it("Create small country", async () => {
     const res = await testServer.post("/cities").send({
       country: "G",
