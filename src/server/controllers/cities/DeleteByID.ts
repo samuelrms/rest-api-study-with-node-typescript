@@ -17,15 +17,12 @@ export const deleteByIDValidation = validation((getSchema) => ({
 }));
 
 export const deleteByID = async (req: Request<ParamProps>, res: Response) => {
-  console.log(req.params);
-
-  if (Number(req.params.id) === 123456) {
-    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-      errors: {
+  if (Number(req.params.id) === 123456)
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      errorsResult: {
         default: "Registro não encontrado",
       },
     });
-  }
 
-  return res.status(StatusCodes.NO_CONTENT).send("Apagado com sucesso");
+  return res.status(StatusCodes.NO_CONTENT).send();
 };

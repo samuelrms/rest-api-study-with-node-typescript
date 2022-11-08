@@ -17,15 +17,12 @@ export const getByIDValidation = validation((getSchema) => ({
 }));
 
 export const getByID = async (req: Request<ParamProps>, res: Response) => {
-  if (Number(req.params.id) === 123456) {
-    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-      errors: {
+  if (Number(req.params.id) === 123456)
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      errorsResult: {
         default: "Registro não encontrado",
       },
     });
-  }
-
-  console.log(req.params);
 
   return res.status(StatusCodes.OK).json({
     id: req.params.id,

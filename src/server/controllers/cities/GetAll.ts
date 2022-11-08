@@ -25,8 +25,7 @@ export const getAll = async (
   res: Response
 ) => {
   res.setHeader("access-control-expose-headers", "x-total-count");
-  res.setHeader("total-count", 1);
-  console.log(req.query);
+  res.setHeader("x-total-count", 1);
 
   return res.status(StatusCodes.OK).json([
     {

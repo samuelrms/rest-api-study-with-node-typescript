@@ -31,8 +31,12 @@ export const updateByID = async (
   req: Request<ParamProps, {}, BodyProps>,
   res: Response
 ) => {
-  console.log(req.params);
-  console.log(req.body);
+  if (Number(req.params.id) === 123456)
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      errorsResult: {
+        default: "Registro não encontrado",
+      },
+    });
 
-  return res.status(StatusCodes.INTERNAL_SERVER_ERROR).send("Não implementado");
+  return res.status(StatusCodes.NO_CONTENT).send();
 };
