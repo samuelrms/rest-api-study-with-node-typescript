@@ -50,3 +50,15 @@ Rode o projeto
 ```
 $ yarn start
 ```
+
+# EndPoints
+
+- Base url ```https://study-node-types.herokuapp.com```
+
+### Cidades ```https://study-node-types.herokuapp.com/cities```
+
+- Create  
+- Delete 
+- Put 
+- Post
+- Filters & Limit
