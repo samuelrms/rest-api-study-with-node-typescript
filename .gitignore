@@ -5,3 +5,7 @@ yarn-error.log
 /coverage
 
 .env
+
+.gitignore
+
+yarn-error.log
