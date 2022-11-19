@@ -5,6 +5,7 @@ yarn-error.log
 /coverage
 
 .env
+.sqlite
 
 .gitignore
 
