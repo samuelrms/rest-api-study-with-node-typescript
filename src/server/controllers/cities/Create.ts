@@ -1,15 +1,13 @@
 import { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
 import * as yup from "yup";
+import { Cities } from "../../database/models";
 import { validation } from "../../shared/middleware";
 
-interface Cities {
-  name: string;
-  country: string;
-}
+interface BodyProps extends Omit<Cities, "id"> {}
 
 export const createValidation = validation((getSchema) => ({
-  body: getSchema<Cities>(
+  body: getSchema<BodyProps>(
     yup.object().shape({
       name: yup.string().required().min(3),
       country: yup.string().required().max(2).min(2),
