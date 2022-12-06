@@ -53,9 +53,9 @@ $ yarn start
 
 # EndPoints
 
-- Base url ```https://study-node-types.herokuapp.com```
+- Base url ```api-rest-types-xheh3.ondigitalocean.app```
 
-### Cidades ```https://study-node-types.herokuapp.com/cities```
+### Cidades ```api-rest-types-xheh3.ondigitalocean.app/cities```
 
 - Create  
 - Delete 
