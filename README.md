@@ -53,9 +53,15 @@ $ yarn start
 
 # EndPoints
 
-- Base url ```api-rest-types-xheh3.ondigitalocean.app```
+- Base url 
+```
+api-rest-types-xheh3.ondigitalocean.app
+```
 
-### Cidades ```api-rest-types-xheh3.ondigitalocean.app/cities```
+### Cidades 
+```
+api-rest-types-xheh3.ondigitalocean.app/cities
+```
 
 - Create  
 - Delete 
