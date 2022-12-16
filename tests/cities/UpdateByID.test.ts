@@ -24,6 +24,6 @@ describe("Cities - UpdateByID", () => {
       .send({ name: "Uberlândia", country: "MG" });
 
     expect(res.statusCode).toEqual(StatusCodes.INTERNAL_SERVER_ERROR);
-    expect(res.body).toHaveProperty("errorsResult.default");
+    expect(res.body).toHaveProperty("errors.default");
   });
 });

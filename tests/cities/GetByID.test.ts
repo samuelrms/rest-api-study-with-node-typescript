@@ -20,6 +20,6 @@ describe("Cities - GetByID", () => {
     const res = await testServer.get("/cities/123456").send();
 
     expect(res.statusCode).toEqual(StatusCodes.INTERNAL_SERVER_ERROR);
-    expect(res.body).toHaveProperty("errorsResult.default");
+    expect(res.body).toHaveProperty("errors.default");
   });
 });
